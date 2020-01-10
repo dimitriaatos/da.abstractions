@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.amhelp" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Amplitude modulation math
+	</digest>
+
+	<description>
+		Includes all the math needed for AM.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+        <metadata name="tag">am</metadata>
+        <metadata name="tag">help</metadata>
+        <metadata name="tag">math</metadata>
+        <metadata name="tag">modulation</metadata>
+        <metadata name="tag">amhelp</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				Carrier signal
+			</digest>
+			<description>
+			</description>
+		</inlet>
+        <inlet id="1" type="INLET_TYPE">
+            <digest>
+                Modulator signal
+            </digest>
+            <description>
+            </description>
+        </inlet>
+        <inlet id="2" type="INLET_TYPE">
+            <digest>
+                Depth
+            </digest>
+            <description>
+            </description>
+        </inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="INLET_TYPE">
+			<digest>
+				Modulated signal
+			</digest>
+			<description>
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="int">
+			<arglist />
+			<digest>
+				Funcion depends on inlet
+			</digest>
+			<description>
+                Converted to <m>float</m>.
+			</description>
+		</method>
+        <method name="float">
+            <arglist />
+            <digest>
+                Funcion depends on inlet
+            </digest>
+            <description>
+                In second inlet: sets modulator signal.
+                <br /> <br />
+                In third inlet: sets depth.
+            </description>
+        </method>
+        <method name="signal">
+            <arglist />
+            <digest>
+                Funcion depends on inlet
+            </digest>
+            <description>
+                In left inlet: sets carrier signal.
+                <br /> <br />
+                In second inlet: sets modulator signal.
+                <br /> <br />
+                In third inlet: sets depth.
+                <br /> <br />
+            </description>
+        </method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+	</attributelist>
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+        <seealso name="da.fmhelp" />
+        <seealso name="da.modulatorfreq" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (signal)">
+			<description>
+				Carrier signal
+			</description>
+		</entry>
+        <entry name ="Inlet 2 (signal, int, float)">
+            <description>
+                Modulator signal
+            </description>
+        </entry>
+        <entry name ="Inlet 3 (signal, int, float)">
+            <description>
+                Depth
+            </description>
+        </entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (signal)">
+			<description>
+				Output reset message.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="Keywords">
+			<description>
+am, amplitude modulation, math.
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

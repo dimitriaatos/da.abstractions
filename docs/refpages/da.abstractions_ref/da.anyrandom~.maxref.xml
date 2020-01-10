@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.anyrandom~" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Generate random signal values
+	</digest>
+
+	<description>
+		Outputs random signal values within a given range.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+		<metadata name="tag">random</metadata>
+        <metadata name="tag">synth</metadata>
+        <metadata name="tag">anyrandom</metadata>
+        <metadata name="tag">noise</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				Trigger Output
+			</digest>
+			<description>
+			</description>
+		</inlet>
+		<inlet id="1" type="INLET_TYPE">
+			<digest>
+				Lowest Random Signal
+			</digest>
+			<description>
+			</description>
+		</inlet>
+        <inlet id="2" type="INLET_TYPE">
+            <digest>
+                Highest Random Signal
+            </digest>
+            <description>
+            </description>
+        </inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="INLET_TYPE">
+			<digest>
+				Random Signal Output
+			</digest>
+			<description>
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+        <objarg name="random_range_low" optional="1" type="float">
+            <digest>
+                Lowest Random Signal
+            </digest>
+            <description>
+                Sets the lowest random signal value
+            </description>
+        </objarg>
+		<objarg name="random_range_high" optional="1" type="float">
+			<digest>
+				Highest Random Signal
+			</digest>
+			<description>
+				Sets the highest random signal value.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Output new random value
+			</digest>
+			<description>
+                In left inlet: Generates and outputs a new random signal value.
+			</description>
+		</method>
+		<method name="int">
+			<arglist />
+			<digest>
+				Sets the random value range
+			</digest>
+			<description>
+                Integers are converted to floats.
+			</description>
+		</method>
+        <method name="float">
+            <arglist />
+            <digest>
+                Sets the random value range
+            </digest>
+            <description>
+                In second inlet: sets the lowest random signal value
+                <br />
+                <br />
+                In third inlet: sets the highest random signal value.
+            </description>
+        </method>
+        <method name="signal">
+            <arglist />
+            <digest>
+                Sets the random value range and triggers new random values
+            </digest>
+            <description>
+                In left inlet: triggers a new random signal value when rises above 0.5
+                <br />
+                <br />
+                In second inlet: sets the lowest random signal value
+                <br />
+                <br />
+                In third inlet: sets the highest random signal value.
+            </description>
+        </method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+	</attributelist>
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="da.anyrandom" />
+		<seealso name="random" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (bang, signal)">
+			<description>
+				Lowest Random Signal.
+			</description>
+		</entry>
+		<entry name ="Inlet 2 (float, signal)">
+			<description>
+				Highest Random Signal.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (signal)">
+			<description>
+				Random Signal Output.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+random, signal, noise.
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

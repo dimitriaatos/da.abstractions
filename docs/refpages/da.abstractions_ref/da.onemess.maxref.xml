@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.onemess" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Gate anything using a bang
+	</digest>
+
+	<description>
+		Allows a anything in the left inlet to pass through ONLY if a <m>bang</m> has been received in the right inlet. After that, a anything in the left inlet will not get through again until a <m>bang</m> has been received again in the right inlet.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+    <metadata name="tag">gate</metadata>
+    <metadata name="tag">message</metadata>
+    <metadata name="tag">bang</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="anything">
+			<digest>
+				(anything) Only first message gets through
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</inlet>
+		<inlet id="1" type="anything">
+			<digest>
+				(anything) Set to let one message through
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="anything">
+			<digest>
+				(anything) First message
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</outlet>
+		<outlet id="1" type="anything">
+			<digest>
+				(anything) All other messages
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="initialization" optional="1" type="int">
+			<digest>
+				First-time pass-through
+			</digest>
+			<description>
+				A non-zero argument sets <o>da.onemess</o> to permit a message to be sent out the left outlet the first time a message is received in the left inlet.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Function depends on inlet
+			</digest>
+			<description>
+				In left inlet: Causes a <m>bang</m> to be sent out the left inlet only if a bang has been received in the right inlet since the last message was sent out.
+				<br />
+				<br />
+				In right inlet: Resets <o>da.onemess</o> to permit a message to be sent out the next time a message is received in the left inlet.
+			</description>
+		</method>
+		<method name="int">
+			<arglist>
+				<arg name="input" optional="0" type="int" />
+			</arglist>
+			<digest>
+				Function depends on inlet
+			</digest>
+			<description>
+				In left inlet: Causes a itself to be sent out the left inlet only if a bang has been received in the right inlet since the last message was sent out.
+				<br />
+				<br />
+				In right inlet: Resets <o>da.onemess</o> to permit a message to be sent out the next time a message is received in the left inlet.
+			</description>
+		</method>
+		<method name="float">
+			<arglist>
+				<arg name="input" optional="0" type="float" />
+			</arglist>
+			<digest>
+				Function depends on inlet
+			</digest>
+			<description>
+				In left inlet: Causes a itself to be sent out the left inlet only if a bang has been received in the right inlet since the last message was sent out.
+				<br />
+				<br />
+				In right inlet: Resets <o>da.onemess</o> to permit a message to be sent out the next time a message is received in the left inlet.
+			</description>
+		</method>
+		<method name="list">
+			<arglist>
+				<arg name="input" optional="0" type="list" />
+			</arglist>
+			<digest>
+				Function depends on inlet
+			</digest>
+			<description>
+				In left inlet: Causes a itself to be sent out the left inlet only if a bang has been received in the right inlet since the last message was sent out.
+				<br />
+				<br />
+				In right inlet: Resets <o>da.onemess</o> to permit a message to be sent out the next time a message is received in the left inlet.
+			</description>
+		</method>
+		<method name="anything">
+			<arglist>
+				<arg name="input" optional="0" type="list" />
+			</arglist>
+			<digest>
+				Function depends on inlet
+			</digest>
+			<description>
+				In left inlet: Causes a itself to be sent out the left inlet only if a bang has been received in the right inlet since the last message was sent out.
+				<br />
+				<br />
+				In right inlet: Resets <o>da.onemess</o> to permit a message to be sent out the next time a message is received in the left inlet.
+			</description>
+		</method>
+		<method name="stop">
+			<arglist />
+			<digest>
+				Ignore previous right inlet bang
+			</digest>
+			<description>
+				In left inlet: Undoes the effect of a <m>bang</m> in the right inlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+        <seealso name="onebang" />
+        <seealso name="gate" />
+	</seealsolist>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (signal)">
+			<description>
+				When <o>da.onemess</o> receives a message in its left inlet, it sends it out its left outlet only if it has received a <m>bang</m> in its right inlet since the last time it sent out a message. Otherwise, it sends it out its right outlet.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="Keywords">
+			<description>
+gate, onebang, onece
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

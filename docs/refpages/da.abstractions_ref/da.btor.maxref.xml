@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.btor" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Covert minimum and maximum to center and range
+	</digest>
+
+	<description>
+		Converts the min and max of a sub-range to its center and its precentage of the whole range, avoiding clipping.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+		<metadata name="tag">range</metadata>
+		<metadata name="tag">rslider</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				Minimum
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</inlet>
+		<inlet id="1" type="INLET_TYPE">
+			<digest>
+				Maximum
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="OUTLET_TYPE">
+			<digest>
+				Center
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</outlet>
+		<outlet id="1" type="OUTLET_TYPE">
+			<digest>
+				Range
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="low-value" optional="0" type="number">
+			<digest>
+				Range's lowest value
+			</digest>
+			<description>
+				Sets the lowest value of the sub-range.
+			</description>
+		</objarg>
+		<objarg name="high-value" optional="0" type="number">
+			<digest>
+				Range's highest value
+			</digest>
+			<description>
+				Sets the highest value of the sub-range.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Perform the last convertion
+			</digest>
+			<description>
+				In left inlet: Performs the last convertion.
+			</description>
+		</method>
+		<method name="int">
+			<arglist>
+				<arg name="input" optional="0" type="int" />
+			</arglist>
+			<digest>
+				Converted to float
+			</digest>
+			<description>
+				Converted to float
+			</description>
+		</method>
+		<method name="float">
+			<arglist>
+				<arg name="input" optional="0" type="float" />
+			</arglist>
+			<digest>
+				Fundtion depends on inlet.
+			</digest>
+			<description>
+				In left inlet: Sets the low value of the sub-ragne.
+				<br />
+				<br />
+				In right inlet: Sets the high value of the sub-ragne.
+			</description>
+		</method>
+		<method name="list">
+			<arglist>
+				<arg name="input" optional="0" type="list" />
+			</arglist>
+			<digest>
+				Sets sub-range's low and high
+			</digest>
+			<description>
+				In left inlet: Sets the low and the high value of the sub-range;
+			</description>
+		</method>
+		<method name="range">
+			<arglist>
+				<arg name="input" optional="1" type="list" />
+			</arglist>
+			<digest>
+				Sets range's low and high
+			</digest>
+			<description>
+				In left inlet: Followed by two numbers sets the low and the high value of the range;
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+	</attributelist>
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="da.rtob" />
+		<seealso name="rslider" />
+		<seealso name="scale" />
+		<seealso name="cartopol" />
+		<seealso name="atoi" />
+		<seealso name="dbtoa" />
+	</seealsolist>
+
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				range, boundaries, center, rslider, position, min, max.
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.live.get" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Get information from Ableton Live
+	</digest>
+
+	<description>
+
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+		<metadata name="tag">live</metadata>
+        <metadata name="tag">api</metadata>
+        <metadata name="tag">lom</metadata>
+        <metadata name="tag">get</metadata>
+        <metadata name="tag">liveget</metadata>
+        <metadata name="tag">live.get</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				Hot inlet
+			</digest>
+			<description>
+			</description>
+		</inlet>
+        <inlet id="1" type="INLET_TYPE">
+            <digest>
+                Cold inlet
+            </digest>
+            <description>
+            </description>
+        </inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="INLET_TYPE">
+			<digest>
+				Message out
+			</digest>
+			<description>
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+        <objarg name="property" optional="1" type="symbol">
+            <digest>
+                Any live object property
+            </digest>
+            <description>
+
+            </description>
+        </objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="property">
+			<arglist />
+			<digest>
+				Any live object or live object property
+			</digest>
+			<description>
+
+			</description>
+		</method>
+        <method name="bang">
+            <arglist />
+            <digest>
+                Triggers output
+            </digest>
+            <description>
+
+            </description>
+        </method>
+        <method name="anything">
+            <arglist />
+            <digest>
+                Live objects, properties or live object methods
+            </digest>
+            <description>
+
+            </description>
+        </method>
+        <method name="set">
+            <arglist />
+            <digest>
+                Sets data with no output
+            </digest>
+            <description>
+                In left inlet: Followed by any message or attribute makes a replacement without triggering output.
+            </description>
+        </method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+        <attribute name="id" get="1" set="1" type="int" size="1">
+            <digest>
+                Live object id number
+            </digest>
+            <description>
+
+                <br /> <br />
+            </description>
+        </attribute>
+        <attribute name="path" get="1" set="1" type="int" size="1">
+            <digest>
+                Live object path
+            </digest>
+            <description>
+
+                <br /> <br />
+            </description>
+        </attribute>
+        <attribute name="observe" get="1" set="1" type="int" size="1">
+            <digest>
+                Enable observer
+            </digest>
+            <description>
+                Followed by a non-zero number enables observer.
+                <br /> <br />
+            </description>
+        </attribute>
+	</attributelist>
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (anything)">
+			<description>
+				Hot inlet
+			</description>
+		</entry>
+        <entry name ="Inlet 2 (anything)">
+            <description>
+                Cold inlet
+            </description>
+        </entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (list)">
+			<description>
+				Message out
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="Keywords">
+			<description>
+ableton, live, api.
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

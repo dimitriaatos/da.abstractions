@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.poly.activevoices" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Activate poly~ voices by specifying their number
+	</digest>
+
+	<description>
+		Use da.poly.activevoices to play or stop instances of the poly~ object by specifying the number of voices you want to play.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+    <metadata name="tag">poly~</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="int">
+			<digest>
+				(int) A on/off toggle for the poly~ object
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</inlet>
+		<inlet id="1" type="int">
+			<digest>
+				(int) Set the number of active voices
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</inlet>
+		<inlet id="1" type="int">
+			<digest>
+				(int) Voice index, connect to thispoly~
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="int">
+			<digest>
+				(int) 1 voice On, 0 voice Off
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="int">
+			<arglist>
+				<arg name="input" optional="0" type="int" />
+			</arglist>
+			<digest>
+				Function depends on inlet
+			</digest>
+			<description>
+				In left inlet: 0 closes every voice, non-zero turns on active voices.
+				<br />
+				<br />
+				In middle inlet: Sets the number of active voices.
+				<br />
+				<br />
+				In right inlet: Voice index number (connect to thispoly~).
+			</description>
+		</method>
+		<method name="float">
+			<arglist>
+				<arg name="input" optional="0" type="float" />
+			</arglist>
+			<digest>
+				Converted to int
+			</digest>
+			<description>
+				Converted to <m>int</m>.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+        <seealso name="poly~" />
+        <seealso name="thispoly~" />
+	</seealsolist>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (int)">
+			<description>
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="Keywords">
+			<description>
+				poly~, harmonics, poly, voices, active
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.isfloat" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Reports if incoming data is an integer or a float
+	</digest>
+
+	<description>
+		The da.isfloat object outputs 1 if the incoming data is a float and 0 if it is an integer, if the input is a list of numbers da.isfloat output 1 if there is even one float number.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+		<metadata name="tag">float</metadata>
+		<metadata name="tag">list</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				input value
+			</digest>
+			<description>
+				Number or List
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="INLET_TYPE">
+			<digest>
+				Output value
+			</digest>
+			<description>
+				0 or 1
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="int">
+			<arglist />
+			<digest>
+				Reports 0
+			</digest>
+			<description>
+				Reports 0.
+			</description>
+		</method>
+		<method name="float">
+			<arglist />
+			<digest>
+				Reports 1
+			</digest>
+			<description>
+				Reports 1.
+			</description>
+		</method>
+		<method name="list">
+			<arglist />
+			<digest>
+				Reports 0 only if no floats are contained
+			</digest>
+			<description>
+				Reports 0 only if no floats are contained.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+		<attribute name="zlmaxsize" get="1" set="1" type="atom_long" size="1">
+			<digest>
+				Maximum list length
+			</digest>
+			<description>
+				Set the maximum list length for all modes of operation for the <o>zl</o> object. This is the equivalent to using an argument to the object, but allows the list length to be changed dynamically. The default list length is 256, and the maximum list length limit is 32,767.
+			</description>
+			<attributelist>
+				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Maximum List Length" />
+			</attributelist>
+		</attribute>
+	</attributelist>
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="typeroute~" />
+    <seealso name="da.dataflow" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (float, integer)">
+			<description>
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (integer)">
+			<description>
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				float, is, detect, report, datatype, type
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

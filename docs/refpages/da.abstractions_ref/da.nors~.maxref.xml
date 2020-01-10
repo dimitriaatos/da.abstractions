@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.nors~" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Prioritise signal over integers and floats
+	</digest>
+
+	<description>
+		Accepts signal integers and floats, prioritise signal and outputs signal or float.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+		<metadata name="tag">inlet</metadata>
+        <metadata name="tag">nors</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				Signal, integer or float
+			</digest>
+			<description>
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="INLET_TYPE">
+			<digest>
+				Signal or float out
+			</digest>
+			<description>
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+        <objarg name="initial_output_value" optional="1" type="float">
+            <digest>
+                Initial signal value
+            </digest>
+            <description>
+                Initial signal value
+            </description>
+        </objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="int">
+			<arglist />
+			<digest>
+				Convert to signal or float
+			</digest>
+			<description>
+                Integers are converted to signal of floats depending on the output mode.
+			</description>
+		</method>
+        <method name="float">
+            <arglist />
+            <digest>
+                Convert to signal or output directly
+            </digest>
+            <description>
+                Floats are converted to signal or outputed directrly depending on the output mode.
+            </description>
+        </method>
+        <method name="signal">
+            <arglist />
+            <digest>
+                Output directly or convert to float
+            </digest>
+            <description>
+                Signal is outputed directly or converted to float depending on the output mode.
+            </description>
+        </method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+        <attribute name="output" get="1" set="1" type="symbol" size="1">
+            <digest>
+                Output mode
+            </digest>
+            <description>
+                The <m>output</m> attribute specifies the output data type: <br />
+                <m>s</m> (default): signal is passed through directly other data types are converted to signal. <br />
+                <m>f</m>: float is passed through directly other data types are converted to float.
+                <br /> <br />
+            </description>
+        </attribute>
+	</attributelist>
+
+	<!--DISCUSSION-->
+	<discussion>
+        This abstraction prioritises signal over integer and float in a similar way to some MSP object inlets such as the left inlet of <o>gate~</o>.
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="inlet" />
+        <seealso name="sig~" />
+        <seealso name="snapshot~" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (signal, float, integer)">
+			<description>
+				Data to be converted or passed through.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (signal, float)">
+			<description>
+				Converted or passed through data.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+                This abstraction prioritises signal over integer and float in a similar way to some msp object inlets such as the left inlet of <o>gate~</o>.
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+inlet, signal.
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

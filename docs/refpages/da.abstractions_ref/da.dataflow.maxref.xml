@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.dataflow" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Dataflow report
+	</digest>
+
+	<description>
+		Reports if incoming data gets updated in time intervals shorter then a given threshold value.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+		<metadata name="tag">dataflow</metadata>
+        <metadata name="tag">threshold</metadata>
+        <metadata name="tag">flow</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				Data
+			</digest>
+			<description>
+			</description>
+		</inlet>
+        <inlet id="1" type="INLET_TYPE">
+            <digest>
+                Time interval
+            </digest>
+            <description>
+            </description>
+        </inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="INLET_TYPE">
+			<digest>
+				Data flow report
+			</digest>
+			<description>
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+        <objarg name="threshold" optional="1" type="int">
+            <digest>
+                Time interval threshold
+            </digest>
+            <description>
+
+            </description>
+        </objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="anything">
+			<arglist />
+			<digest>
+				Any data
+			</digest>
+			<description>
+                In left inlet: Anything to be checked for its udate rate.
+			</description>
+		</method>
+        <method name="int">
+            <arglist />
+            <digest>
+                Time interval threshold (ms)
+            </digest>
+            <description>
+                In right inlet: sets data update interval threshold.
+            </description>
+        </method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+	</attributelist>
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (anything)">
+			<description>
+				Any data.
+			</description>
+		</entry>
+        <entry name ="Inlet 2 (int)">
+            <description>
+                Data update interval threshold.
+            </description>
+        </entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (int)">
+			<description>
+				Report if data is flowing.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="Keywords">
+			<description>
+dataflow, threshold.
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

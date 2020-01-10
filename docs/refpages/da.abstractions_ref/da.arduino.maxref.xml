@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="da.arduino" module="da.abstractions" kind="patcher">
+
+	<digest>
+		An interface for Standard Firmata protocol
+	</digest>
+
+	<description>
+		Provides acces to any Arduino via the Firmata protocol
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+		<metadata name="tag">arduino</metadata>
+		<metadata name="tag">hardware</metadata>
+		<metadata name="tag">firmata</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				Message in
+			</digest>
+			<description></description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="INLET_TYPE">
+			<digest>
+				Message out
+			</digest>
+			<description></description>
+		</outlet>
+		<outlet id="1" type="INLET_TYPE">
+			<digest>
+				Available serial ports
+			</digest>
+			<description></description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist></objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="print">
+			<arglist/>
+			<digest>
+				Output a list of available serial ports
+			</digest>
+			<description>
+				Makes
+				<o>da.arduino</o>
+				output a list of available serial ports from the right outlet.
+			</description>
+		</method>
+		<method name="open">
+			<arglist/>
+			<digest>
+				Open a serial connection
+			</digest>
+			<description>
+				Opens a new serial connection.
+			</description>
+		</method>
+		<method name="close">
+			<arglist/>
+			<digest>
+				Close the serial connection
+			</digest>
+			<description>
+				Closes an open serial connection, premitting use of the serial port from other applications.
+			</description>
+		</method>
+		<method name="pinmode">
+			<arglist/>
+			<digest>
+				Set digital pin mode
+			</digest>
+			<description>
+				Sets the digital pin mode. The message format has to be
+				<m>pinmode [pin number] [mode]</m>.<br/>
+				Mode can be specified by name or by index number, the available modes are:<br/><br/>
+				<m>0</m>:
+				<m>input</m><br/>
+				<m>1</m>:
+				<m>output</m><br/>
+				<m>2</m>:
+				<m>analog</m><br/>
+				<m>3</m>:
+				<m>pwm</m><br/>
+				<m>4</m>:
+				<m>servo</m><br/>
+				<m>5</m>:
+				<m>shift</m><br/>
+				<m>6</m>:
+				<m>i2c</m><br/>
+				<m>7</m>:
+				<m>onewire</m><br/>
+				<m>8</m>:
+				<m>stepper</m><br/>
+				<m>9</m>:
+				<m>encoder</m><br/>
+				<m>10</m>:
+				<m>serial</m><br/>
+				<m>11</m>:
+				<m>pullup</m><br/>
+			</description>
+		</method>
+		<method name="digital">
+			<arglist/>
+			<digest>
+				Set value of an individual digital pin on output mode
+			</digest>
+			<description>
+				Sets the value of an digital pin that is on
+				<m>output</m>
+				mode. The message format has to be
+				<m>digital [pin number] [value]</m>. The value can be 0 or 1.
+			</description>
+		</method>
+		<method name="pwm">
+			<arglist/>
+			<digest>
+				Set value of an individual digital pin on pwm mode
+			</digest>
+			<description>
+				Sets the value of an digital pin that is on
+				<m>pwm</m>
+				mode. The message format has to be
+				<m>digital [pin number] [value]</m>. The value can be any float number between 0. and 1.
+			</description>
+		</method>
+		<method name="servo">
+			<arglist/>
+			<digest>
+				Set max angle, minPulse, maxPulse, freq
+			</digest>
+			<description></description>
+		</method>
+		<method name="analogin">
+			<arglist/>
+			<digest>
+				Enable analog input by pin
+			</digest>
+			<description>
+				Sets the report state of an analog (input) pin. The message format has to be
+				<m>analogin [pin number] [report]</m>. The repot state can be 1 for enabling report and 0 for disabling report.
+			</description>
+		</method>
+		<method name="digitalin">
+			<arglist/>
+			<digest>
+				Enable analog input by port
+			</digest>
+			<description>
+				Sets the report state of a digital port. The message format has to be
+				<m>digitalin [port number] [report]</m>. The repot state can be 1 for enabling report and 0 for disabling report. Each digital port contains 8 digital pins (e.g. port 0 contains digital pins 0 to 7).
+				<br/>
+				<br/>
+				(for a digital pin to report its value it has also to be on
+				<m>input</m>
+				mode)
+			</description>
+		</method>
+		<method name="info">
+			<arglist/>
+			<digest>
+				Get hardware capabilities feedback
+			</digest>
+			<description>
+				Causes
+				<o>da.arduino</o>
+				to create a dictionary with information about the currently connected arduino's pins and their capabilities and output a
+				<m>info</m>
+				message followed by the dictionary name.
+			</description>
+		</method>
+		<method name="version">
+			<arglist/>
+			<digest>
+				Get protocol version
+			</digest>
+			<description></description>
+		</method>
+		<method name="firmware">
+			<arglist/>
+			<digest>
+				Get name and version of the firmware
+			</digest>
+			<description></description>
+		</method>
+		<method name="pinstate">
+			<arglist/>
+			<digest></digest>
+			<description></description>
+		</method>
+		<method name="samplinginterval">
+			<arglist/>
+			<digest>
+				Set the poll rate of the main loop
+			</digest>
+			<description></description>
+		</method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+		<attribute name="poll" get="1" set="1" type="symbol" size="1">
+			<digest>
+				Set automatic polling
+			</digest>
+			<description>
+				The word
+				<m>poll</m>, followed by a number , sets the time in milliseconds
+				<br/>
+				<br/>
+			</description>
+		</attribute>
+		<attribute name="port" get="1" set="1" type="symbol" size="1">
+			<digest>
+				Output mode
+			</digest>
+			<description>
+				<br/>
+				<br/>
+			</description>
+		</attribute>
+	</attributelist>
+
+	<!--DISCUSSION-->
+	<discussion></discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="serial"/>
+	</seealsolist>
+
+	<misc name="Input">
+		<entry name="Inlet (list)">
+			<description>
+				Message in.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name="Output">
+		<entry name="Outlet 1 (list)">
+			<description>
+				Message out.
+			</description>
+		</entry>
+		<entry name="Outlet 2 (list)">
+			<description>
+				Available serial ports.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name="Discussion">
+		<entry name="More details">
+			<description></description>
+		</entry>
+		<entry name="Keywords">
+			<description>
+				serial, arduino, firmata.
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

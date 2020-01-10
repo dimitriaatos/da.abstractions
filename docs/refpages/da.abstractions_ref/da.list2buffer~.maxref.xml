@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.list2buffer~" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Fill a buffer with a list of numbers
+	</digest>
+
+	<description>
+		Fills a buffer with the data of a list consisting of numbers.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+		<metadata name="tag">buffer</metadata>
+        <metadata name="tag">list</metadata>
+        <metadata name="tag">fill</metadata>
+        <metadata name="tag">list2buffer</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				List
+			</digest>
+			<description>
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+        <objarg name="name" optional="1" type="symbol">
+            <digest>
+                Buffer object name
+            </digest>
+            <description>
+                This argument names the <o>buffer~</o> object whose sample memory is filled by <o>da.list2buffer~</o>.
+            </description>
+        </objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="set">
+			<arglist />
+			<digest>
+				Set the name of the buffer~ used
+			</digest>
+			<description>
+                The word <m>set</m>, followed by the name of a <o>buffer~</o> object, changes the <o>buffer~</o> where <o>da.list2buffer~</o> will write its incoming list.
+			</description>
+		</method>
+        <method name="list">
+            <arglist />
+            <digest>
+                Fill a buffer
+            </digest>
+            <description>
+                Accepts lists consisting only of numbers and writes them to a <o>buffer~</o> object.
+            </description>
+        </method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+	</attributelist>
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+        <seealso name="buffer~" />
+        <seealso name="poke~" />
+        <seealso name="peek~" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (list)">
+			<description>
+				List to be stored on a <o>buffer~</o>.
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

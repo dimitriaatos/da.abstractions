@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+
+<c74object name="da.randommetro" module="da.abstractions" kind="patcher">
+
+	<digest>
+		Output a bang message at random intervals
+	</digest>
+
+	<description>
+		Acts as a metronome which outputs <m>bang</m> s at a specified range of random interval.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Dimitri Aatos Ellinas</metadata>
+		<metadata name="tag">da</metadata>
+		<metadata name="tag">da.abstractions</metadata>
+		<metadata name="tag">metro</metadata>
+		<metadata name="tag">random</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				Start/Stop Metronome
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</inlet>
+		<inlet id="1" type="INLET_TYPE">
+			<digest>
+				Set Metronome Low Time Interval
+			</digest>
+			<description>
+				Sets the lowest delay time for the object.
+			</description>
+		</inlet>
+		<inlet id="2" type="INLET_TYPE">
+			<digest>
+				Set Metronome High Time Interval
+			</digest>
+			<description>
+				Sets the highest delay time for the object.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="OUTLET_TYPE">
+			<digest>
+				Output Ticks of Metronome
+			</digest>
+			<description>
+				TEXT_HERE
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="low-interval" optional="1" units="ms" type="number">
+			<digest>
+				Low output interval
+			</digest>
+			<description>
+				The optional first argument sets an initial low value for the time interval at which <o>da.randommetro</o> sends its output.
+				<br />
+				<br />
+				If there is no argument, the initial low time interval is 100 milliseconds.
+			</description>
+		</objarg>
+		<objarg name="high-interval" optional="1" units="ms" type="number">
+			<digest>
+				High output interval
+			</digest>
+			<description>
+				The optional second argument sets an initial high value for the time interval at which <o>da.randommetro</o> sends its output.
+				<br />
+				<br />
+				If there is no argument, the initial low time interval is 100 milliseconds.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Start the clock
+			</digest>
+			<description>
+				In left inlet: starts the <o>da.randommetro</o> object.
+			</description>
+			<attributelist>
+				<attribute name="inlet" get="1" set="1" type="int" size="1" value="1" />
+			</attributelist>
+		</method>
+		<method name="int">
+			<arglist>
+				<arg name="input" optional="0" type="int" />
+			</arglist>
+			<digest>
+				Turn metro on/off or set the time interval
+			</digest>
+			<description>
+				In first inlet: Any number other than 0 starts the <o>da.randommetro</o> object. At random intervals, <o>da.randommetro</o> sends a <m>bang</m> out the outlet. <m>0</m> stops <o>metro</o>.				<br />
+				<br />
+				In second inlet: The number is the low time interval, in milliseconds, at which <o>da.randommetro</o> sends out a <m>bang</m>.
+				<br />
+				In third inlet: The number is the high time interval, in milliseconds, at which <o>da.randommetro</o> sends out a <m>bang</m>.
+			</description>
+		</method>
+		<method name="float">
+			<arglist>
+				<arg name="input" optional="0" type="float" />
+			</arglist>
+			<digest>
+				Set the time interval
+			</digest>
+			<description>
+				Performs the same function as <m>int</m>.
+			</description>
+		</method>
+		<method name="list">
+			<arglist>
+				<arg name="input" optional="0" type="list" />
+			</arglist>
+			<digest>
+				Low and high
+			</digest>
+			<description>
+				In middle inlet: The first two elements of the list set the low and high time interval respectively	.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+	</attributelist>
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="metro" />
+		<seealso name="da.anyrandom" />
+		<seealso name="random" />
+		<seealso name="clocker" />
+		<seealso name="counter" />
+		<seealso name="cpuclock" />
+		<seealso name="delay" />
+		<seealso name="setclock" />
+		<seealso name="tempo" />
+		<seealso name="transport" />
+		<seealso name="uzi" />
+	</seealsolist>
+
+	<misc name = "Output">
+		<entry name ="bang">
+			<description>
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				metro, random, interval, delay.
+			</description>
+		</entry>
+	</misc>
+
+</c74object>
